@@ -23,7 +23,12 @@ ignore="**/tmp/**,
 
 
 #CRIA PASTA DE RELATÓRIO
-[ -d $report_directory] && echo "Diretório já existe." || mkdir $report_directory
+if [ ! -d $report_directory ]
+then
+     mkdir $report_directory 
+else
+     echo "Diretorio já existe."
+fi
 
 # EXECUTA CONTAINER DO HORUSEC REMOVENDO-O AO FIM DA EXECUÇÃO
 docker pull $image
