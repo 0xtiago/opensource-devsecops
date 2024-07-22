@@ -8,14 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Horusec Scan
     steps:
-      # - name: Run Horusec
-      #   id: run_horusec
-      #   uses: fike/horusec-action@v0.1
-      #   with:
-      #     arguments: -p="./" --ignore="**/.vscode/**, **/*.env, **/.mypy_cache/**, **/tests/**"
-        - name: Run Horusec
-          run: |
-            ls -lha
-            #cd ./opensourcetargets/apps/VAmPI-master
-            #bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec.sh)
+      - uses: actions/checkout@v2
+      - name: Run Horusec
+        run: |
+          ls -R
+          #cd ./opensourcetargets/apps/VAmPI-master
+          #bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec.sh)
           shell: bash
