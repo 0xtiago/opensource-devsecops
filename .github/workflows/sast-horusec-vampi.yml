@@ -1,6 +1,5 @@
-
 on: 
-  push
+  push:
     paths:
       - /targets/apps/VAmPI/**
 
