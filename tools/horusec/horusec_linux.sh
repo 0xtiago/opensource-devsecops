@@ -2,7 +2,7 @@
 #image="0xtiago/horusec-cli"
 image="horuszup/horusec-cli:v2.9.0-beta.3"
 severity_exception="LOW,UNKNOWN,INFO"
-report_type="text"
+report_type="json"
 report_directory="reports"
 report_file="horusec_report.json"
 ignore="**/tmp/**,
