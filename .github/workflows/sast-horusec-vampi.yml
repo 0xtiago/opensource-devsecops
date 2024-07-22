@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./targets/apps/VAmPI-master
+        working-directory: targets/apps/VAmPI-master
     name: Horusec Scan
     steps:
       # - name: Run Horusec
