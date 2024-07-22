@@ -6,11 +6,11 @@ on:
 jobs:
   checking_code:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./targets/apps/VAmPI-master
     name: Horusec Scan
     steps:
-      - name: Access project directory
-        run: |
-          cd targets/apps/VAmPI-master
       - name: Run Horusec
         id: run_horusec
         uses: fike/horusec-action@v0.1
