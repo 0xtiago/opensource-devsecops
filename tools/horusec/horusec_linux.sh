@@ -1,14 +1,10 @@
-mkdir reports
-
-#CRIA PASTA DE RELATÓRIO
-mkdir reports
-
 #CONFIGURAÇÃO DE PARÂMETROS DO HORUSEC
 #image="0xtiago/horusec-cli"
 image="horuszup/horusec-cli:v2.9.0-beta.3"
 severity_exception="LOW,UNKNOWN,INFO"
 report_type="text"
-report_path="reports/horusec_report.json"
+report_directory="reports"
+report_file="horusec_report.json"
 ignore="**/tmp/**,
 	      **/.vscode/**,\
 				**/.venv/**, \
@@ -26,6 +22,10 @@ ignore="**/tmp/**,
 				**/*.sarif" ;\
 
 
+#CRIA PASTA DE RELATÓRIO
+mkdir -p $horusec_directory
+
+
 # EXECUTA CONTAINER DO HORUSEC REMOVENDO-O AO FIM DA EXECUÇÃO
 docker pull $image
 docker run --rm \
@@ -34,7 +34,7 @@ docker run --rm \
 	-p /src/horusec -P $(pwd) \
 	-s=$severity_exception \
 	--ignore=$ignore \
-	--information-severity=true
-	#-o="$report_type" \
-	#-O=/src/horusec/$report_path
+	--information-severity=true \
+	-o="$report_type" \
+	-O="$horusec_directory/$report_file"
 	

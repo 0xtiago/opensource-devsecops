@@ -1,9 +1,10 @@
 # CONFIGURAÇÃO DE PARÂMETROS DO HORUSEC
+#$image="0xtiago/horusec-cli"
 $image = "horuszup/horusec-cli:v2.9.0-beta.3"
 $severity_exception = "LOW,UNKNOWN,INFO"
 $report_type = "json"
 $report_directory = "reports"
-$report_path = "reports/horusec_report.json"
+$report_file = "horusec_report.json"
 $ignore = @(
     "**/tmp/**",
     "**/.vscode/**",
@@ -34,7 +35,7 @@ docker run --rm `
     -v ${PWD}:/src/horusec $image horusec start `
     -p /src/horusec -P ${PWD} `
     -o="$report_type" `
-    -O="$report_directory/$report_path" `
+    -O="$report_directory/$report_file" `
     -s="$severity_exception" `
     --ignore="$ignore" `
     --information-severity=$true

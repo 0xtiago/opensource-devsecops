@@ -12,4 +12,4 @@ jobs:
       - name: Run Horusec
         run: |
           ls -R
-          cd ./targets/apps/VAmPI-master ; bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_linux.sh)
+          cd ./targets/apps/VAmPI-master ; bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_linux_action.sh)
