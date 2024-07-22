@@ -19,12 +19,11 @@ ignore="**/tmp/**,
 				**/bin/Debug/*/appsettings.*.json, \
 				**/*.yml, \
 				**/bin/Debug/*/appsettings.json, \
-				**/*.sarif" ;\
+				**/*.sarif"
 
 
 #CRIA PASTA DE RELATÓRIO
 [ -d $report_directory] && echo "Diretório já existe." || mkdir $report_directory
-
 
 # EXECUTA CONTAINER DO HORUSEC REMOVENDO-O AO FIM DA EXECUÇÃO
 docker pull $image
