@@ -34,8 +34,8 @@ docker run --rm `
     -v /var/run/docker.sock:/var/run/docker.sock `
     -v ${PWD}:/src/horusec $image horusec start `
     -p /src/horusec -P ${PWD} `
-    -o="$report_type" `
-    -O="$report_directory/$report_file" `
     -s="$severity_exception" `
     --ignore="$ignore" `
-    --information-severity=$true
+    --information-severity=$true `
+    -o="$report_type" `
+    -O="$report_directory/$report_file"
