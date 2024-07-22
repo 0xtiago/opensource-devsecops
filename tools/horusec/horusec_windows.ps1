@@ -38,4 +38,4 @@ docker run --rm `
     --ignore="$ignore" `
     --information-severity=$true `
     -o="$report_type" `
-    -O=".\$report_directory\$report_file"
+    -O="$report_directory\$report_file"
