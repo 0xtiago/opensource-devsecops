@@ -23,7 +23,7 @@ ignore="**/tmp/**,
 
 
 #CRIA PASTA DE RELATÓRIO
-mkdir -p $horusec_directory
+[ -d $horusec_directory] && echo "Diretório já existe." || mkdir $horusec_directory
 
 
 # EXECUTA CONTAINER DO HORUSEC REMOVENDO-O AO FIM DA EXECUÇÃO
