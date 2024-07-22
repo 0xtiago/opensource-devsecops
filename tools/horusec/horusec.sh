@@ -8,7 +8,7 @@ mkdir reports
 image="horuszup/horusec-cli:v2.9.0-beta.3"
 severity_exception="LOW,UNKNOWN,INFO"
 report_type="text"
-report_path="reports/horusec_report.json"
+#report_path="reports/horusec_report.json"
 ignore="**/tmp/**,
 	      **/.vscode/**,\
 				**/.venv/**, \
