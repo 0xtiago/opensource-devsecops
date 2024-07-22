@@ -1,7 +1,7 @@
-on: 
+on:
   push:
     paths:
-      - /targets/apps/VAmPI/**
+      - "/targets/apps/VAmPI/**"
 
 jobs:
   checking_code:
