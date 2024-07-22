@@ -1,13 +1,16 @@
 on:
   push:
-    # paths:
-    #   - '/targets/apps/VAmPI/**'
+    paths:
+      - 'targets/apps/VAmPI/**'
 
 jobs:
   checking_code:
     runs-on: ubuntu-latest
     name: Horusec Scan
     steps:
+      - name: Access project directory
+        run: |
+          cd targets/apps/VAmPI
       - name: Run Horusec
         id: run_horusec
         uses: fike/horusec-action@v0.1
