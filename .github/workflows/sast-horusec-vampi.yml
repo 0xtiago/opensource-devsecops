@@ -1,7 +1,7 @@
 on:
   push:
     paths:
-      - 'targets/apps/VAmPI/**'
+      - 'targets/apps/VAmPI-master/**'
 
 jobs:
   checking_code:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Access project directory
         run: |
-          cd targets/apps/VAmPI
+          cd targets/apps/VAmPI-master
       - name: Run Horusec
         id: run_horusec
         uses: fike/horusec-action@v0.1
