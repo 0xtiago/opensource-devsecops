@@ -23,7 +23,7 @@ ignore="**/tmp/**,
 
 
 #CRIA PASTA DE RELATÓRIO
-[ -d $horusec_directory] && echo "Diretório já existe." || mkdir $horusec_directory 
+[ -d $report_directory] && echo "Diretório já existe." || mkdir $report_directory
 
 
 # EXECUTA CONTAINER DO HORUSEC REMOVENDO-O AO FIM DA EXECUÇÃO
@@ -36,5 +36,5 @@ docker run --rm \
 	--ignore=$ignore \
 	--information-severity=true \
 	-o="$report_type" \
-	-O="$horusec_directory/$report_file"
+	-O="$report_directory/$report_file"
 	
