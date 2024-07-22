@@ -1,2 +1,2 @@
 # devsecops
-AppSec Open-source labs repository
+An AppSec Open-source labs repository
