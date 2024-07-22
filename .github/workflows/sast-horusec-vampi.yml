@@ -4,11 +4,8 @@ on:
       - 'targets/apps/VAmPI-master/**'
 
 jobs:
-  checking_code:
+  build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: targets/apps/VAmPI-master
     name: Horusec Scan
     steps:
       # - name: Run Horusec
@@ -18,5 +15,6 @@ jobs:
       #     arguments: -p="./" --ignore="**/.vscode/**, **/*.env, **/.mypy_cache/**, **/tests/**"
         - name: Run Horusec
           run: |
+            cd targets/apps/VAmPI-master
             bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec.sh)
           shell: bash
