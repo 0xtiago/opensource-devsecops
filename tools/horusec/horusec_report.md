@@ -22,21 +22,21 @@
 
 | Severity | Rule ID | Sumário | Arquivo:Linha | Ferramenta de Segurança |
 | --- | --- | --- | --- | --- |
-| 🚨 Critical | HS-LEAKS-25 | Potential Hard-coded credential | config.py:12 | HorusecEngine |
-| 🚨 Critical | HS-LEAKS-25 | Potential Hard-coded credential | models/user_model.py:48 | HorusecEngine |
-| 🚨 Critical | HS-LEAKS-26 | Hard-coded password | api_views/users.py:183 | HorusecEngine |
+| 🟣 Critical | HS-LEAKS-25 | Potential Hard-coded credential | config.py:12 | HorusecEngine |
+| 🟣 Critical | HS-LEAKS-25 | Potential Hard-coded credential | models/user_model.py:48 | HorusecEngine |
+| 🟣 Critical | HS-LEAKS-26 | Hard-coded password | api_views/users.py:183 | HorusecEngine |
 | 🔴 High | 62142 |  Versions Unsafes: <3.0 | /src/horusec/requirements.txt:1 | Safety |
 | 🔴 High | 55261 |  Versions Unsafes: <2.2.5 | /src/horusec/requirements.txt:2 | Safety |
 | 🔴 High |  | MissConfiguration | Dockerfile:0 | Trivy |
 | 🔴 High | CVE-2023-30861 | Flask is a lightweight WSGI web application framework. When all of the following conditions are met, a response containing data intended for one client may be cached and subsequently sent by the proxy to other clients. If the proxy also caches `Set-... | requirements.txt:2 | Trivy |
-| 🟣 Medium | B104 | Possible binding to all interfaces. | app.py:17 | Bandit |
-| 🟣 Medium | B608 | Possible SQL injection vector through string-based query construction. | models/user_model.py:72 | Bandit |
+| 🟡 Medium | B104 | Possible binding to all interfaces. | app.py:17 | Bandit |
+| 🟡 Medium | B608 | Possible SQL injection vector through string-based query construction. | models/user_model.py:72 | Bandit |
 
 ## Descrição das Vulnerabilidades
 
-### 🚨 Potential Hard-coded credential
+### 🟣 Potential Hard-coded credential
 
-**Severidade:**  🚨 Critical
+**Severidade:**  🟣 Critical
 
 **Sumário:** **Potential Hard-coded credential**
 
@@ -51,9 +51,9 @@
 
 ---
 
-### 🚨 Potential Hard-coded credential
+### 🟣 Potential Hard-coded credential
 
-**Severidade:**  🚨 Critical
+**Severidade:**  🟣 Critical
 
 **Sumário:** **Potential Hard-coded credential**
 
@@ -68,9 +68,9 @@
 
 ---
 
-### 🚨 Hard-coded password
+### 🟣 Hard-coded password
 
-**Severidade:**  🚨 Critical
+**Severidade:**  🟣 Critical
 
 **Sumário:** **Hard-coded password**
 
@@ -170,9 +170,9 @@ Cwe Links: (https://cwe.mitre.org/data/definitions/539.html)
 
 ---
 
-### 🟣 Possible binding to all interfaces.
+### 🟡 Possible binding to all interfaces.
 
-**Severidade:**  🟣 Medium
+**Severidade:**  🟡 Medium
 
 **Sumário:** **Possible binding to all interfaces.**
 
@@ -189,9 +189,9 @@ Cwe Links: (https://cwe.mitre.org/data/definitions/539.html)
 
 ---
 
-### 🟣 Possible SQL injection vector through string-based query construction.
+### 🟡 Possible SQL injection vector through string-based query construction.
 
-**Severidade:**  🟣 Medium
+**Severidade:**  🟡 Medium
 
 **Sumário:** **Possible SQL injection vector through string-based query construction.**
 

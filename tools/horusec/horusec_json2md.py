@@ -37,11 +37,11 @@ def clean_summary(summary):
 
 def severity_icon(severity):
     icons = {
-        'CRITICAL': '\U0001f6a8',
-        'HIGH': '\U0001f534',
-        'MEDIUM': '\U0001f7e3',
-        'LOW': '\U0001f7e1',
-        'INFO': '\U0001f535',
+        'CRITICAL': '\U0001F7E3',
+        'HIGH': '\U0001F534',
+        'MEDIUM': '\U0001F7E1',
+        'LOW': '\U0001F7E2',
+        'INFO': '\U0001F535',
     }
     return icons.get(severity.upper(), '')
 
