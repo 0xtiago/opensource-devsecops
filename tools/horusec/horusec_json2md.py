@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-
+# -*- coding: utf-8 -*-
+import sys
+import codecs
 import json
 import argparse
 
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+
 def read_horusec_json(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
     return data
 
