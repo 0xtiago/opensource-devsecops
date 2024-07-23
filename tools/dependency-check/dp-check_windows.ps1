@@ -41,7 +41,7 @@ if (-not $installedVersion -or [version]$VERSION_DPCHECK -gt [version]$installed
     Expand-Archive -Path "dependency-check.zip" -DestinationPath "$HOMEPATH\.dependency-check" -Force
     
     # Adicionar o caminho do binário ao PATH
-    $env:PATH += ";C:\$HOMEPATH\.dependency-check\bin"
+    $env:PATH += ";$HOMEPATH\.dependency-check\bin"
     
     
     Remove-Item -Path "dependency-check.zip"
