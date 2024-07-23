@@ -4,7 +4,14 @@ import sys
 import codecs
 import json
 import argparse
-from colorama import init, Fore, Style
+
+# Tenta importar colorama para usar cores no terminal
+try:
+    from colorama import init, Fore, Style
+    init(autoreset=True)
+    COLORAMA_AVAILABLE = True
+except ImportError:
+    COLORAMA_AVAILABLE = False
 
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
@@ -67,10 +74,16 @@ def generate_markdown(data, output_path):
         
         if not analysis_vulnerabilities:
             file.write("Nenhuma vulnerabilidade encontrada.\n\n")
-            print(Fore.GREEN + "Nenhuma vulnerabilidade encontrada.")
+            if COLORAMA_AVAILABLE:
+                print(Fore.GREEN + "Nenhuma vulnerabilidade encontrada.")
+            else:
+                print("Nenhuma vulnerabilidade encontrada.")
             return
         else:
-            print(Fore.RED + "Vulnerabilidades encontradas.")
+            if COLORAMA_AVAILABLE:
+                print(Fore.RED + "Vulnerabilidades encontradas.")
+            else:
+                print("Vulnerabilidades encontradas.")
         
         file.write("## Tabela de Vulnerabilidades\n\n")
         file.write("| Severity | Rule ID | Sumário | Arquivo:Linha | Ferramenta de Segurança |\n")
