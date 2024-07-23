@@ -4,6 +4,7 @@ import sys
 import codecs
 import json
 import argparse
+from colorama import init, Fore, Style
 
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
@@ -61,12 +62,21 @@ def generate_markdown(data, output_path):
         file.write(f"**Status:** {data.get('status', 'N/A')}\n\n")
         file.write(f"**CreatedAt:** {data.get('createdAt', 'N/A')}\n\n")
         file.write(f"**FinishedAt:** {data.get('finishedAt', 'N/A')}\n\n")
+
+        analysis_vulnerabilities = data.get('analysisVulnerabilities', [])
+        
+        if not analysis_vulnerabilities:
+            file.write("Nenhuma vulnerabilidade encontrada.\n\n")
+            print(Fore.GREEN + "Nenhuma vulnerabilidade encontrada.")
+            return
+        else:
+            print(Fore.RED + "Vulnerabilidades encontradas.")
         
         file.write("## Tabela de Vulnerabilidades\n\n")
         file.write("| Severity | Rule ID | Sumário | Arquivo:Linha | Ferramenta de Segurança |\n")
         file.write("| --- | --- | --- | --- | --- |\n")
         
-        for item in data.get('analysisVulnerabilities', []):
+        for item in analysis_vulnerabilities:
             vulnerability = item.get('vulnerabilities', {})
             severity = vulnerability.get('severity', 'N/A').capitalize()
             icon = severity_icon(severity)
