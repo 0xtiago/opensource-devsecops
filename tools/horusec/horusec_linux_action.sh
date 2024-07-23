@@ -33,7 +33,7 @@ docker run --rm \
 	-p /src/horusec -P $(pwd) \
 	-s=$severity_exception \
 	--ignore=$ignore \
-	--information-severity=true
+	--information-severity=true \
 	-o="$report_type" \
 	-O=/src/horusec/$report_directory/$report_file
 	
