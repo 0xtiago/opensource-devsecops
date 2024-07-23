@@ -21,12 +21,11 @@ jobs:
           curl -sL https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_linux.sh| bash
 
       - name: SAST - Horusec Report Generation 📊
-        run: | 
+        run: |
           cd reports
-          pip install -r https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_json2md/requirements.txt
+          pip install colorama
           curl -sL https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_json2md/horusec_json2md.py  -o horusec_json2md.py 
           python3 horusec_json2md.py horusec_report.json horusec_report.md
-
 
       - name: SAST - Horusec Upload Report Artifact 💾
         uses: actions/upload-artifact@v3
