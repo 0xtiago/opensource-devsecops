@@ -1,5 +1,6 @@
 # dependency-check_windows.ps1
-#Testado em: Dependency-Check Core version 10.0.3
+# tiagotavares.io | github.com/0xtiago
+# Testado em: Dependency-Check Core version 10.0.3
 
 # Definir a codificação do console para UTF-8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
