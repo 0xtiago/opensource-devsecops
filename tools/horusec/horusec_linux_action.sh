@@ -35,5 +35,5 @@ docker run --rm \
 	--ignore=$ignore \
 	--information-severity=true \
 	-o="$report_type" \
-	-O=/src/horusec/$report_directory/$report_file
+	-O="/src/horusec/$report_directory/$report_file"
 	
