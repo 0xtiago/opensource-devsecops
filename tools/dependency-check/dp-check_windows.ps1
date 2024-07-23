@@ -8,7 +8,7 @@ $destinationPath = "$HOME\.dependency-check"
 
 # Função para obter a versão instalada
 function Get-InstalledVersion {
-    $dependencyCheckPath = "$destinationPath\dependency-check\bin\dependency-check.bat"
+    $dependencyCheckPath = "$destinationPath\bin\dependency-check.bat"
     if (Test-Path $dependencyCheckPath) {
         $versionOutput = & $dependencyCheckPath --version
         $versionPattern = "Dependency-Check Core version ([\d\.]+)"
@@ -48,7 +48,9 @@ if (-not $installedVersion -or [version]$VERSION_DPCHECK -gt [version]$installed
     }
     
     # Descompactar o arquivo ZIP para o diretório de destino
-    Expand-Archive -Path "dependency-check.zip" -DestinationPath $destinationPath -Force
+    Expand-Archive -Path "dependency-check.zip" -DestinationPath . -Force
+    Move-Item -Path ".\dependency-check\*" -Destination "$HOME\.dependency-check" -Force
+    Remove-Item -Path ".\dependency-check" -Recurse -Force
     
     # Adicionar o caminho do binário ao PATH
     $env:PATH += ";$destinationPath\bin"
