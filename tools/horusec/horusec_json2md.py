@@ -48,9 +48,9 @@ def severity_icon(severity):
 
 def generate_markdown(data, output_path):
     with open(output_path, 'w',  encoding='utf-8') as file:
-        file.write(f"# Horusec {data.get('version', 'N/A')} - Static Analysis Security Test\n\n")
+        file.write(f"# Horusec {data.get('version', 'N/A')} - Static Application Security Test\n\n")
         # Table of contents
-        file.write("- [Horusec - Static Analysis Security Test](#horusec---static-analysis-security-test)\n\n")
+        file.write("- [Horusec - Static Application Security Test](#horusec---static-application-security-test)\n\n")
         file.write("  - [Scan Info](#scan-info)\n\n")
         file.write("  - [Tabela de Vulnerabilidades](#tabela-de-vulnerabilidades)\n\n")
         file.write("  - [Descrição das Vulnerabilidades](#descrição-das-vulnerabilidades)\n\n")
