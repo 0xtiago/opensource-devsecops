@@ -3,13 +3,37 @@ on:
     paths:
       - 'targets/apps/VAmPI-master/**'
 
+
 jobs:
-  build:
+  run-scripts:
     runs-on: ubuntu-latest
+
     name: Horusec Scan
     steps:
-      - uses: actions/checkout@v2
-      - name: Run Horusec
+      - uses: actions/checkout@v3
+      - name: SAST - Horusec Run 🐞
         run: |
           ls -R
-          cd ./targets/apps/VAmPI-master ; bash <(curl -s https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_linux_action.sh)
+          cd ./targets/apps/VAmPI-master ; curl -sL https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_linux.sh| bash
+          
+      - name: SAST - Horusec Report Generation 📊
+        run: | 
+          cd reports
+          pip install -r https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_json2md/requirements.txt
+          curl -sL https://raw.githubusercontent.com/0xtiago/opensource-devsecops/main/tools/horusec/horusec_json2md/horusec_json2md.py  -o horusec_json2md.py 
+          python3 horusec_json2md.py horusec_report.json horusec_report.md
+
+
+      - name: SAST - Horusec Upload Report Artifact 💾
+        uses: actions/upload-artifact@v3
+        with:
+          name: SAST - Horusec Scan
+          path: reports/horusec_report.md
+
+      - name: SAST - Horusec Results In Summary 💁🏽
+        run: cat reports/horusec_report.md >> $GITHUB_STEP_SUMMARY
+
+
+      
+
+      
