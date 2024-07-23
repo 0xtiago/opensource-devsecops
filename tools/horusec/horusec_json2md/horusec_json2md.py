@@ -80,10 +80,11 @@ def generate_markdown(data, output_path):
                 print("Nenhuma vulnerabilidade encontrada.")
             return
         else:
+            num_vulnerabilities = len(analysis_vulnerabilities)
             if COLORAMA_AVAILABLE:
-                print(Fore.RED + "Vulnerabilidades encontradas.")
+                print(Fore.RED + f"Vulnerabilidades encontradas: {num_vulnerabilities}.")
             else:
-                print("Vulnerabilidades encontradas.")
+                print(f"Vulnerabilidades encontradas: {num_vulnerabilities}.")
         
         file.write("## Tabela de Vulnerabilidades\n\n")
         file.write("| Severity | Rule ID | Sumário | Arquivo:Linha | Ferramenta de Segurança |\n")
