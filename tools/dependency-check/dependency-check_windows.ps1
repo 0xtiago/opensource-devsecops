@@ -54,7 +54,7 @@ if (-not $installedVersion -or [version]$VERSION_DPCHECK -gt [version]$installed
     Remove-Item -Path ".\dependency-check" -Recurse -Force
     
     # Adicionar o caminho do binário ao PATH
-    setx PATH "$HOME\.dependency-check\bin\;%PATH%" 
+    $env:PATH += ";$destinationPath\bin"
     
     # Limpar arquivos temporários
     Remove-Item -Path "dependency-check.zip"
