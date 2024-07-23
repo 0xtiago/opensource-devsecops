@@ -34,6 +34,6 @@ docker run --rm \
 	-s=$severity_exception \
 	--ignore=$ignore \
 	--information-severity=true
-	#-o="$report_type" \
-	#-O=/src/horusec/$report_path
+	-o="$report_type" \
+	-O=/src/horusec/$report_directory/$report_file
 	
