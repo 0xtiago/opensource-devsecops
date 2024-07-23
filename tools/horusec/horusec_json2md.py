@@ -23,16 +23,27 @@ def clean_summary(summary):
         return summary[len(phrase):]
     return summary
 
+# def severity_icon(severity):
+#     """Add severity icon based on severity level."""
+#     icons = {
+#         "CRITICAL": "🟣",
+#         "HIGH": "🔴",
+#         "MEDIUM": "🟡",
+#         "LOW": "🟢",
+#         "INFO": "🔵"
+#     }
+#     return icons.get(severity.upper(), "")
+
+
 def severity_icon(severity):
-    """Add severity icon based on severity level."""
     icons = {
-        "CRITICAL": "🟣",
-        "HIGH": "🔴",
-        "MEDIUM": "🟡",
-        "LOW": "🟢",
-        "INFO": "🔵"
+        'CRITICAL': '\U0001f6a8',
+        'HIGH': '\U0001f534',
+        'MEDIUM': '\U0001f7e3',
+        'LOW': '\U0001f7e1',
+        'INFO': '\U0001f535',
     }
-    return icons.get(severity.upper(), "")
+    return icons.get(severity.upper(), '')
 
 
 def generate_markdown(data, output_path):
