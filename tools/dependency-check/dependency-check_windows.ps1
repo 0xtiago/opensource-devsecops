@@ -82,7 +82,7 @@ if (-Not (Test-Path -Path $PROFILE)) {
     New-Item -Path $PROFILE -ItemType File -Force
 
     # Adiciona as linhas de configuração ao arquivo de perfil
-    Add-Content -Path $PROFILE -Value '$env:PATH += ";$destinationPath\bin"'
+    Add-Content -Path $PROFILE -Value '$env:PATH += ";$HOME\.dependency-check\bin"'
 }
 
 # Caso o arquivo já exista, adiciona as linhas de configuração ao final do arquivo
@@ -91,7 +91,7 @@ else {
     $content = Get-Content -Path $PROFILE
 
     # Defina a linha que precisa ser verificada
-    $lineToCheck = '$env:PATH += ";$destinationPath\bin"'
+    $lineToCheck = '$env:PATH += ";$HOME\.dependency-check\bin"'
 
     # Verifique se a linha já está presente no arquivo
     if ($content -notcontains $lineToCheck) {
