@@ -75,11 +75,11 @@ if (-Not (Test-Path -Path $PROFILE)) {
     # Cria o diretório do perfil se não existir
     $profileDir = Split-Path -Parent $PROFILE
     if (-Not (Test-Path -Path $profileDir)) {
-        New-Item -Path $profileDir -ItemType Directory -Force
+        New-Item -Path $profileDir -ItemType Directory -Force *> $null
     }
 
     # Cria o arquivo de perfil
-    New-Item -Path $PROFILE -ItemType File -Force 2>$null
+    New-Item -Path $PROFILE -ItemType File -Force *> $null
 
     # Adiciona as linhas de configuração ao arquivo de perfil
     Add-Content -Path $PROFILE -Value '$env:PATH += ";$HOME\.dependency-check\bin"'
@@ -98,6 +98,9 @@ else {
         # Adicione a linha ao final do arquivo
         Add-Content -Path $PROFILE -Value $lineToCheck
         Write-Output "Linha adicionada ao perfil: $lineToCheck"
+
+        #Recarrega perfil
+        . $PROFILE
     } 
     else {
         Write-Output "Linha já está presente no perfil."
