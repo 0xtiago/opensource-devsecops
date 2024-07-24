@@ -20,9 +20,9 @@ docker pull owasp/dependency-check:$DC_VERSION
 
 # Run dependency-check
 docker run --rm `
-    --volume "$PWD:/src" `
-    --volume "$DATA_DIRECTORY:/usr/share/dependency-check/data" `
-    --volume "$PWD/reports:/report" `
+    -v "${PWD}:/src" `
+    -v "${DATA_DIRECTORY}:/usr/share/dependency-check/data" `
+    -v "${PWD}/reports:/report" `
     owasp/dependency-check:$DC_VERSION `
     --scan /src `
     --format "ALL" `
