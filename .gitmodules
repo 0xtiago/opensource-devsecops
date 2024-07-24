@@ -1,6 +1,3 @@
-[submodule "targets/apps/VAmPI"]
-	path = targets/apps/VAmPI
-	url = https://github.com/erev0s/VAmPI
 [submodule "targets/AWSGoat"]
 	path = targets/AWSGoat
 	url = https://github.com/ine-labs/AWSGoat
