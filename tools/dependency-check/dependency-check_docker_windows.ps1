@@ -20,6 +20,7 @@ docker pull owasp/dependency-check:$DC_VERSION
 
 # Run dependency-check
 docker run --rm `
+    -v /var/run/docker.sock:/var/run/docker.sock `
     -v "${PWD}:/src" `
     -v "${DATA_DIRECTORY}:/usr/share/dependency-check/data" `
     -v "${PWD}/reports:/report" `
