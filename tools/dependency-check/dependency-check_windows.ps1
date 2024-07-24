@@ -50,9 +50,9 @@ if (-not $installedVersion -or [version]$VERSION_DPCHECK -gt [version]$installed
     }
     
     # Descompactar o arquivo ZIP para o diretório de destino
-    Expand-Archive -Path "dependency-check.zip" -DestinationPath . -Force
-    Move-Item -Path ".\dependency-check\*" -Destination $destinationPath -Force
-    Remove-Item -Path ".\dependency-check" -Recurse -Force
+    Expand-Archive -Path "dependency-check.zip" -DestinationPath . -Force *> $null
+    Move-Item -Path ".\dependency-check\*" -Destination $destinationPath -Force *> $null
+    Remove-Item -Path ".\dependency-check" -Recurse -Force *> $null
     
     # Adicionar o caminho do binário ao PATH
     $env:PATH += ";$destinationPath\bin"
