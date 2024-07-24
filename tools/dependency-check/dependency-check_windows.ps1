@@ -79,7 +79,7 @@ if (-Not (Test-Path -Path $PROFILE)) {
     }
 
     # Cria o arquivo de perfil
-    New-Item -Path $PROFILE -ItemType File -Force
+    New-Item -Path $PROFILE -ItemType File -Force 2>$null
 
     # Adiciona as linhas de configuração ao arquivo de perfil
     Add-Content -Path $PROFILE -Value '$env:PATH += ";$HOME\.dependency-check\bin"'
