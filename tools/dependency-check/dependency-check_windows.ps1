@@ -46,7 +46,7 @@ if (-not $installedVersion -or [version]$VERSION_DPCHECK -gt [version]$installed
     
     # Criar o diretório de destino se não existir
     if (-not (Test-Path -Path $destinationPath)) {
-        New-Item -Path $destinationPath -ItemType Directory
+        New-Item -Path $destinationPath -ItemType Directory *> $null
     }
     
     # Descompactar o arquivo ZIP para o diretório de destino
