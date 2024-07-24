@@ -1,9 +1,9 @@
 # Set variables
 $DC_VERSION = "latest"
-$DC_DIRECTORY = "$env:USERPROFILE\OWASP-Dependency-Check"
+$DC_DIRECTORY = "$HOME\.dependency-check"
 $DC_PROJECT = "dependency-check scan: $PWD"
-$DATA_DIRECTORY = "$DC_DIRECTORY\data"
-$CACHE_DIRECTORY = "$DC_DIRECTORY\data\cache"
+$DATA_DIRECTORY = "$DC_DIRECTORY\docker\data"
+$CACHE_DIRECTORY = "$DC_DIRECTORY\docker\data\cache"
 
 # Create directories if they do not exist
 if (-Not (Test-Path -Path $DATA_DIRECTORY)) {
@@ -23,7 +23,7 @@ docker run --rm `
     -v /var/run/docker.sock:/var/run/docker.sock `
     -v "${PWD}:/src" `
     -v "${DATA_DIRECTORY}:/usr/share/dependency-check/data" `
-    -v "${PWD}/reports:/report" `
+    -v "${PWD}/reports" `
     owasp/dependency-check:$DC_VERSION `
     --scan /src `
     --format "ALL" `

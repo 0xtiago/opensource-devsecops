@@ -1,10 +1,10 @@
 #!/bin/sh
 
 DC_VERSION="latest"
-DC_DIRECTORY=$HOME/OWASP-Dependency-Check
+DC_DIRECTORY=$HOME/.dependency-check
 DC_PROJECT="dependency-check scan: $(pwd)"
-DATA_DIRECTORY="$DC_DIRECTORY/data"
-CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
+DATA_DIRECTORY="$DC_DIRECTORY/docker/data"
+CACHE_DIRECTORY="$DC_DIRECTORY/docker/data/cache"
 
 if [ ! -d "$DATA_DIRECTORY" ]; then
     echo "Initially creating persistent directory: $DATA_DIRECTORY"
@@ -23,7 +23,7 @@ docker run --rm \
     -u $(id -u ${USER}):$(id -g ${USER}) \
     --volume $(pwd):/src:z \
     --volume "$DATA_DIRECTORY":/usr/share/dependency-check/data:z \
-    --volume $(pwd)/reports:/report:z \
+    --volume $(pwd)/reports:/req
     owasp/dependency-check:$DC_VERSION \
     --scan /src \
     --format "ALL" \
