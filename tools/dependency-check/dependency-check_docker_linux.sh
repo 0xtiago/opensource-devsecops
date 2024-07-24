@@ -3,8 +3,8 @@
 DC_VERSION="latest"
 DC_DIRECTORY=$HOME/.dependency-check
 DC_PROJECT="dependency-check scan: $(pwd)"
-DATA_DIRECTORY="$DC_DIRECTORY/docker/data"
-CACHE_DIRECTORY="$DC_DIRECTORY/docker/data/cache"
+DATA_DIRECTORY="$DC_DIRECTORY/data"
+CACHE_DIRECTORY="$DC_DIRECTORY/data/cache"
 
 if [ ! -d "$DATA_DIRECTORY" ]; then
     echo "Initially creating persistent directory: $DATA_DIRECTORY"

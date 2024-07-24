@@ -2,8 +2,8 @@
 $DC_VERSION = "latest"
 $DC_DIRECTORY = "$HOME\.dependency-check"
 $DC_PROJECT = "dependency-check scan: $PWD"
-$DATA_DIRECTORY = "$DC_DIRECTORY\docker\data"
-$CACHE_DIRECTORY = "$DC_DIRECTORY\docker\data\cache"
+$DATA_DIRECTORY = "$DC_DIRECTORY\data"
+$CACHE_DIRECTORY = "$DC_DIRECTORY\data\cache"
 
 # Create directories if they do not exist
 if (-Not (Test-Path -Path $DATA_DIRECTORY)) {
