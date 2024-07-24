@@ -1,3 +1,9 @@
+# horusec_docker_windows.ps1
+# tiagotavares.io | github.com/0xtiago
+# Testado em: Horusec CLI v2.9.0-beta.3
+# PSVersion 5.1.26100.1252
+
+
 # CONFIGURAÇÃO DE PARÂMETROS DO HORUSEC
 #$image="0xtiago/horusec-cli"
 $image = "horuszup/horusec-cli:v2.9.0-beta.3"

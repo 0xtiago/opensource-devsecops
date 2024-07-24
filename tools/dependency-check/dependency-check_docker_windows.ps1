@@ -1,3 +1,8 @@
+# dependency-check_docker_windows.ps1
+# tiagotavares.io | github.com/0xtiago
+# Testado em: Dependency-Check Core version 10.0.3
+# PSVersion 5.1.26100.1252
+
 # Set variables
 $DC_VERSION = "latest"
 $DC_DIRECTORY = "$HOME\.dependency-check"

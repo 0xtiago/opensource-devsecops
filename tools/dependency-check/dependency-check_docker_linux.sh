@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# dependency-check_docker_linux.sh
+# tiagotavares.io | github.com/0xtiago
+# Testado em: Dependency-Check Core version 10.0.3
+# # GNU bash, version 3.2.57(1)-release (arm64-apple-darwin23)
+
+
 DC_VERSION="latest"
 DC_DIRECTORY=$HOME/.dependency-check
 DC_PROJECT="dependency-check scan: $(pwd)"
